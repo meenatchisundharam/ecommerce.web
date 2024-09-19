@@ -68,4 +68,62 @@
         </div>
       </section>
      <!-- Product list -->
+
+      <!-- offers Section -->
+      <section>
+    <div class="h-auto w-full bg-red-100 swiper offersSwiper">
+      <div class="swiper-wrapper">
+        <div
+          v-for="n in 5"
+          :key="n"
+          class="p-7 text-center flex justify-center items-center flex-col swiper-slide"
+        >
+          <p class="font-medium mb-5">Best Collection {{ n }}</p>
+          <h1 class="text-2xl font-bold text-center mb-5">
+            Get 50% off On Your First Order
+          </h1>
+          <span
+            class="font-medium underline underline-offset-8 decoration-2 decoration-red-500"
+            >Shop Now</span
+          >
+        </div>
+      </div>
+
+      <!-- Add Swiper navigation buttons (optional) -->
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> -->
+
+      <!-- Swiper pagination (optional) -->
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
+  </section>
+      <!-- offers Section -->
 </template>
+<script>
+export default {
+  data() {
+    return {
+      swipers: {
+        offersSwiper: null,
+      },
+    };
+  },
+  mounted() {
+    this.swipers.offersSwiper = new Swiper(".offersSwiper", {
+      loop: true, // Optional: Makes the slides loop
+      autoplay: {
+        delay: 2500, // Autoplay with a delay of 2500ms (2.5 seconds)
+        disableOnInteraction: false, // Keeps autoplay after user interaction
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  },
+};
+</script>
