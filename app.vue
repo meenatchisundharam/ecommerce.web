@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NuxtPage />
-    <RouterView /> 
+    <NuxtPage /> 
   </div>
 </template>
