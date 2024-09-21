@@ -29,25 +29,36 @@
     <!-- Placeholder for right-aligned content (only on large screens) -->
     <div class="hidden lg:block">
       <!-- Right section content if needed -->
-      <div class="flex items-center gap-3">
-        <div class="relative">
+      <div class="flex items-center gap-3 mt-10 w-full justify-evenly">
+        <NuxtLink to="/products">
+          <div class="relative">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-      <div class="relative">
+        </NuxtLink>
+
+        <NuxtLink to = "/wishlist">
+          <div class="relative">
         <i class="fa-solid fa-heart"></i>
         <div class="absolute -top-2 -right-2 h-3 w-3 rounded-full bg-black text-white text-[8px] flex justify-center items-center"
         >2
     </div>
       </div>
-      <div class="relative">
+        </NuxtLink>
+
+      <NuxtLink to = "/cart">
+        <div class="relative">
         <i class="fa-solid fa-cart-shopping"></i>
         <div class="absolute -top-2 -right-2 h-3 w-3 rounded-full bg-black  text-white text-[8px] flex justify-center items-center"
         >2
         </div>
       </div>
+      </NuxtLink>
+      
+     <NuxtLink to = "/profile" >
       <div class="relative">
         <i class="fa-solid fa-user"></i>
       </div>
+     </NuxtLink>
       </div>
     </div>
   </div>
@@ -78,28 +89,37 @@
         </li>
       </ul>
         </div>
-        <div class="">
-            <div class="flex items-center gap-3 mt-10 w-full justify-evenly">
-        <div class="relative">
+        <div class="flex items-center gap-3 mt-10 w-full justify-evenly">
+        <NuxtLink to="/products">
+          <div class="relative">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-      <div class="relative">
+        </NuxtLink>
+
+        <NuxtLink to = "/wishlist">
+          <div class="relative">
         <i class="fa-solid fa-heart"></i>
         <div class="absolute -top-2 -right-2 h-3 w-3 rounded-full bg-black text-white text-[8px] flex justify-center items-center"
         >2
     </div>
       </div>
-      <div class="relative">
+        </NuxtLink>
+
+      <NuxtLink to = "/cart">
+        <div class="relative">
         <i class="fa-solid fa-cart-shopping"></i>
         <div class="absolute -top-2 -right-2 h-3 w-3 rounded-full bg-black  text-white text-[8px] flex justify-center items-center"
         >2
         </div>
       </div>
+      </NuxtLink>
+      
+     <NuxtLink to = "/profile" >
       <div class="relative">
         <i class="fa-solid fa-user"></i>
       </div>
+     </NuxtLink>
       </div>
-        </div>
     </div>
   </div>
   </div>
@@ -126,6 +146,10 @@ export default{
                     name: "Contact",
                     route: "/contact",
                 },
+                {
+                  name: "poverview",
+                  route:"/poverview"
+                }
             ],
         };
     },
