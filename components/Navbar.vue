@@ -20,7 +20,7 @@
     <!-- Nav Menu (hidden on small screens) -->
     <nav class="hidden lg:flex gap-6">
       <ul class="flex gap-4 text-lg font-medium">
-        <li v-for="(item, index) in menuItems" :key ="index" >
+        <li v-for="(item, index) in menuItems" :key ="index" class="hover:underline">
             <NuxtLink :to="item.route">{{ item.name }} </NuxtLink>
         </li>
       </ul>
