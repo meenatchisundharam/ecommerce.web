@@ -75,7 +75,7 @@
       }
   
       // Redirect to login page
-      router.push('/login')
+      router.push('/')
     }
   
     return {
@@ -93,7 +93,7 @@
   
   onMounted(() => {
     if (!isLoggedIn) {
-      router.push('/login')
+      router.push('/')
     } else {
       user.value = userData
     }

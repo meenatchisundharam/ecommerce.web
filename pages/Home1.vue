@@ -1,5 +1,5 @@
 <template>
-    <Home />
+    <Navbar />
     <!-- Category Section -->
      <section>
         <div class="w-full min-h-screen grid lg:grid-cols-2 gap-4">

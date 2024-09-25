@@ -131,10 +131,6 @@ export default{
             isSidebaropen: false,
             menuItems: [
                 {
-                    name: "Home",
-                    route: "/",
-                },
-                {
                     name: "Products",
                     route: "/products",
                 },

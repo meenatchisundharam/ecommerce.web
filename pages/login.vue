@@ -70,7 +70,7 @@ export default {
   mounted(){
     let isLoggedIn = useCookie("isLoggedIn");
     if(isLoggedIn.value && isLoggedIn.value == true){
-      this.$router.push("/profile");
+      this.$router.push("/Home1");
     }
   },
   methods: {
@@ -98,7 +98,7 @@ export default {
           let email = useCookie("email");
           email.value = res.user.email;
 
-          this.$router.push("/profile");
+          this.$router.push("/Home1");
           
         }else {
           alert(res.message);
