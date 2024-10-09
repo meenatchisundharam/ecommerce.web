@@ -23,7 +23,7 @@
         <div class="mt-2">
           <input 
            v-model="userData.phone"
-          type="number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          type="tel" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         </div>
       </div>
 
@@ -84,7 +84,7 @@ export default{
   mounted(){},
   methods : {
     register() {
-      this.$http.$post("/auth/register", {
+      this.$http.$post(`${this.$config.public.apiUrl}/auth/register`, {
         body:{
           // this called hyderate method mela call panniruka data va vangum
           ...this.userData,
@@ -92,7 +92,7 @@ export default{
       })
       .then((res) => {
         if(res.success) {
-          this.$router.push("/login");
+          this.$router.push("/verify-otp");
         } else {
           alert(res.message);
         }

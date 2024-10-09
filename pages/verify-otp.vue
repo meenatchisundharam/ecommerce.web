@@ -6,11 +6,19 @@
       </div>
       <div class="flex flex-col max-w-md space-y-5 mt-3">
         <input
+        v-model="userData.email"
+          type="email"
+          placeholder="email"
+          class="px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
+        ></input>
+        <input
+        v-model="userData.verificationCode"
           type="text"
           placeholder="otp"
           class="px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
         />
         <button
+        @click="Confirm()"
           class="flex items-center justify-center mt-3 px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-blue-600 text-white"
         >
           Confirm
@@ -18,4 +26,35 @@
       </div>
     </div>
   </template>
+
+<script>
+export default{
+  data(){
+    return {
+      userData:{
+        email: "",
+        verificationCode: "",
+
+      },
+    };
+  },
+  mounted(){},
+  methods : {
+    Confirm() {
+      this.$http.$post(`${this.$config.public.apiUrl}/auth/verify`, {
+        body:{
+          ...this.userData,
+        }
+      })
+      .then((res) => {
+        if(res.success) {
+          this.$router.push("/login");
+        } else {
+          alert(res.message);
+        }
+      });
+    },
+  },
+};
+</script>
   
